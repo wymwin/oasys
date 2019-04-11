@@ -354,7 +354,7 @@
                               "showType":"none"}}}]}]}]}},
           "tabbable":true,
           "images":{
-            "normal~":"images/用车管理/u29.png"}},
+            "normal~":"images/usingcar/u29.png"}},
 {
           "id":"7da1a90d7e234899b9f73344a412eb69",
           "label":"",
@@ -435,7 +435,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u31.png"}},
+            "normal~":"images/usingcar/u31.png"}},
 {
           "id":"b4763aa03fe34d77a542a0ed0b201825",
           "label":"textfield - date",
@@ -637,7 +637,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u150.png"}},
+            "normal~":"images/usingcar/u150.png"}},
 {
           "id":"63e3d69601a74653b39fb8cac49a3b1f",
           "label":"",
@@ -715,7 +715,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u150.png"}},
+            "normal~":"images/usingcar/u150.png"}},
 {
           "id":"395e462c976a41dc86ddab7c18906fef",
           "label":"panel - calendar",
@@ -5280,7 +5280,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u175.png"}},
+                    "normal~":"images/meeting/u175.png"}},
 {
                   "id":"524ab55476a34a47ad9e1618d28c99f6",
                   "label":"",
@@ -5319,7 +5319,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u177.png"}},
+                    "normal~":"images/meeting/u177.png"}},
 {
                   "id":"dae250a1c2ea45359ac63e1e103b6e6e",
                   "label":"",
@@ -5378,7 +5378,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/会议室管理/u181_line.png"}},
+                    "line~":"images/meeting/u181_line.png"}},
 {
                   "id":"011f8d668e7545bbb89d30111b67801e",
                   "label":"",
@@ -5453,7 +5453,7 @@
                               "linkType":"current"}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/会议室管理/u182.png"}},
+                    "normal~":"images/meeting/u182.png"}},
 {
                   "id":"8e024ab4d15941bd85739277b9f0d151",
                   "label":"",
@@ -5520,7 +5520,7 @@
                                       "showType":"none"}}}]}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/会议室管理/u182.png"}},
+                    "normal~":"images/meeting/u182.png"}},
 {
                   "id":"4020139e9ef7420a97d04cc15387e455",
                   "label":"",
@@ -5600,7 +5600,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u150.png"}}]}},
+            "normal~":"images/usingcar/u150.png"}}]}},
   "masters":{
 },
   "objectPaths":{

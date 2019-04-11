@@ -1263,13 +1263,13 @@
                           "isNewIfGroup":false,
                           "actions":[{
                               "action":"linkFrame",
-                              "description":"打开 会议室管理 进入 (内部框架)",
+                              "description":"打开 meeting 进入 (内部框架)",
                               "linkType":"frame",
                               "framesToTargets":[{
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"会议室管理.html",
+                                    "url":"meeting.html",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1317,13 +1317,13 @@
                           "isNewIfGroup":false,
                           "actions":[{
                               "action":"linkFrame",
-                              "description":"打开 用车管理 进入 (内部框架)",
+                              "description":"打开 usingcar 进入 (内部框架)",
                               "linkType":"frame",
                               "framesToTargets":[{
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"用车管理.html",
+                                    "url":"usingcar.html",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{

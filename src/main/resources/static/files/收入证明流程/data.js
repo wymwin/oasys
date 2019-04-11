@@ -338,7 +338,7 @@
                               "showType":"none"}}}]}]}]}},
           "tabbable":true,
           "images":{
-            "normal~":"images/用车管理/u29.png"}},
+            "normal~":"images/usingcar/u29.png"}},
 {
           "id":"f80eca40987e4ea2b6cd077b13d01c3f",
           "label":"",
@@ -419,7 +419,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u31.png"}},
+            "normal~":"images/usingcar/u31.png"}},
 {
           "id":"4c64343f43c742378b0a70cded7a9b0b",
           "label":"textfield - date",
@@ -621,7 +621,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/用车管理/u150.png"}},
+            "normal~":"images/usingcar/u150.png"}},
 {
           "id":"41d26eb3b83c45f499eb9e3ff8b108f3",
           "label":"",
@@ -5256,7 +5256,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u175.png"}},
+                    "normal~":"images/meeting/u175.png"}},
 {
                   "id":"89eb8093fe194e93bca8db41a45f2c85",
                   "label":"",
@@ -5295,7 +5295,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u177.png"}},
+                    "normal~":"images/meeting/u177.png"}},
 {
                   "id":"761ea9c2cf7443b5bc2a6fbc95fe60a1",
                   "label":"",
@@ -5354,7 +5354,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/会议室管理/u181_line.png"}},
+                    "line~":"images/meeting/u181_line.png"}},
 {
                   "id":"218f7901e464468bbb1035aeff754a6b",
                   "label":"",
@@ -5429,7 +5429,7 @@
                               "linkType":"current"}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/会议室管理/u182.png"}},
+                    "normal~":"images/meeting/u182.png"}},
 {
                   "id":"34fba04061a544cc849d914a1be74fbb",
                   "label":"",
@@ -5496,7 +5496,7 @@
                                       "showType":"none"}}}]}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/会议室管理/u182.png"}},
+                    "normal~":"images/meeting/u182.png"}},
 {
                   "id":"81ee66bbe9d543ca85f919a1db835baf",
                   "label":"",

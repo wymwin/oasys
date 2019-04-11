@@ -5473,7 +5473,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u453.png"}},
+                    "normal~":"images/meeting/u453.png"}},
 {
                   "id":"dfa1df826a4245468581af45e09b2998",
                   "label":"",
@@ -5518,7 +5518,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u455.png"}},
+                    "normal~":"images/meeting/u455.png"}},
 {
                   "id":"97de7ccd89ef4313b7a114b5da2d62a3",
                   "label":"",
@@ -5569,7 +5569,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u457.png"}},
+                    "normal~":"images/meeting/u457.png"}},
 {
                   "id":"79bfb47e096442b79bbe826422aef77b",
                   "label":"label - dialog title",
@@ -5644,7 +5644,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/会议室管理/u461_line.png"}},
+                    "line~":"images/meeting/u461_line.png"}},
 {
                   "id":"b025e2909906427eb053c85d5697f03a",
                   "label":"",
@@ -6092,7 +6092,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u453.png"}},
+                    "normal~":"images/meeting/u453.png"}},
 {
                   "id":"1749bce968b14d149d84d1ff1ffd5a1c",
                   "label":"",
@@ -6137,7 +6137,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u455.png"}},
+                    "normal~":"images/meeting/u455.png"}},
 {
                   "id":"1ce996c1609b4573a32077c96526e51b",
                   "label":"",
@@ -6188,7 +6188,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/会议室管理/u457.png"}},
+                    "normal~":"images/meeting/u457.png"}},
 {
                   "id":"aac84f3ca7c541db94b3a8df7027bdd9",
                   "label":"label - dialog title",
@@ -6263,7 +6263,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/会议室管理/u461_line.png"}},
+                    "line~":"images/meeting/u461_line.png"}},
 {
                   "id":"6bcd40386e544b7d96046d9e878a9d5f",
                   "label":"",

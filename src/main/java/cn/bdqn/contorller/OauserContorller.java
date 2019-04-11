@@ -11,4 +11,14 @@ public class OauserContorller {
         ModelAndView mv = new ModelAndView("index");
         return mv;
     }
+    @RequestMapping("/metting")
+    public ModelAndView metting(){
+        ModelAndView mv = new ModelAndView("metting");
+        return mv;
+    }
+    @RequestMapping("/usingcar")
+    public ModelAndView using(){
+        ModelAndView mv = new ModelAndView("usingcar");
+        return mv;
+    }
 }

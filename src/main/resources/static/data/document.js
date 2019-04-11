@@ -19,7 +19,7 @@
         "children":[{
             "pageName":"登入",
             "type":"Wireframe",
-            "url":"login.html"},
+            "url":"/login"},
 {
             "pageName":"我的桌面",
             "type":"Folder",
@@ -87,11 +87,11 @@
             "children":[{
                 "pageName":"会议室管理",
                 "type":"Wireframe",
-                "url":"会议室管理.html"},
+                "url":"/meeting"},
 {
                 "pageName":"用车管理",
                 "type":"Wireframe",
-                "url":"用车管理.html"},
+                "url":"/usingcar"},
 {
                 "pageName":"用章管理",
                 "type":"Wireframe",
