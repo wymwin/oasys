@@ -1,306 +1,413 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 <head>
-    <title>Untitled Document</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
-    <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
-
-    <script type="text/javascript">
-        if (location.href.toString().indexOf('file://localhost/') == 0) {
-            location.href = location.href.toString().replace('file://localhost/', 'file:///');
-        }
-    </script>
-
-    <script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="resources/scripts/player/splitter.js"></script>
-    <script type="text/javascript" src="resources/scripts/axutils.js"></script>
-    <script type="text/javascript" src="resources/scripts/player/axprototype.js"></script>
-    <script type="text/javascript" src="resources/scripts/messagecenter.js"></script>
-    <script type="text/javascript" src="data/document.js"></script>
-    <style type="text/css">
-
-#outerContainer {
-	width:1000px;
-	height:20000px;
-}
-
-.vsplitbar {
-	width: 3px;
-	background: #B9B9B9;
-}
-
-#rightPanel {
-    background-color: White;
-}
-
-#leftPanel {
-    /*min-width: 190px;*/
-}
-
-.splitterMask {
-   position:absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
-   background-image: url(static/resources/images/transparent.gif);
-   z-index: 20000;
-}
-
-
-    </style>
-    <script type="text/javascript" language="JavaScript"><!--
-        // isolate scope
-        (function() {
-            setUpController();
-
-            var configuration = $axure.document.configuration;
-            var _settings = {};
-            _settings.projectId = configuration.prototypeId;
-            _settings.isAxshare = configuration.isAxshare;
-            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
-            _settings.startCollapsed = HashString("c") == "1";
-
-            $axure.player.settings = _settings;
-
-            $(window).bind('load', function() {
-                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
-                    window.location = '../static/chrome/chrome.html';
-                }
-            });
-
-            $(document).ready(function() {
-                $axure.page.bind('load.start', mainFrame_onload);
-                $axure.messageCenter.addMessageListener(messageCenter_message);
-
-                if($axure.player.settings.loadFeedbackPlugin) {
-                    if($axure.player.settings.isAxshare) {
-                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback.js');
-                    } else {
-                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback.js');
-                    }
-                }
-
-                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
-                initialize();
-                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
-                else $('#outerContainer').splitter({ sizeLeft: 250 });
-                $('#leftPanel').width(250);
-
-                $(window).resize(function() { resizeContent(); });
-
-                $('#maximizePanelContainer').hide();
-
-                initializeLogo();
-
-                $(window).resize();
-                resizeContent();
-                //wait for ie to get to a good state and resize
-                if($.browser.msie && $.browser.version == "6.0") setTimeout(function() { $('#outerContainer').trigger('resize'); }, 30);
-
-                if($axure.player.settings.startCollapsed) {
-                    collapse();
-                    $('#leftPanel').width(0);
-                }
-            });
-        })();
-
-        var lastLeftPanelWidth = 250;
-
-        function messageCenter_message(message, data) {
-            if(message == 'expandFrame') expand();
-        }
-
-        function resizeContent() {
-            var newHeight = $(window).height();
-            var newWidth = $(window).width();
-
-            var controlContainerHeight = newHeight - 32;
-            if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').height() + 16;
-
-            $('#outerContainer').height(newHeight).width(newWidth);
-            $('#leftPanel').height(newHeight);
-            $('#interfaceControlFrame').height(newHeight);
-            $('#interfaceControlFrameContainer').height(controlContainerHeight);
-
-            $('#rightPanel').height(newHeight);
-            $('#mainFrame').height(newHeight);
-
-            $('#rightPanel').width($(window).width() - $('#leftPanel').width() - $('.vsplitbar').width());
-        }
-
-        function closePlayer() {
-            window.location.href = $axure.page.location;
-        }
-
-        function collapse() {
-            var currentHash = self.location.hash;
-            //If the collapse hash string var isn't present and set to 1, insert it
-            if (currentHash.indexOf('#c=1') == -1 && currentHash.indexOf('&c=1') == -1) {
-                var varIndex = currentHash.indexOf('#c=');
-                if (varIndex == -1) varIndex = currentHash.indexOf('&c=');
-                if (varIndex != -1) {
-                    var newHash = currentHash.substring(0, varIndex);
-
-                    newHash = newHash == '' ? '#c=1' : newHash + '&c=1';
-
-                    var ampIndex = currentHash.indexOf('&', varIndex + 1);
-                    if (ampIndex != -1) {
-                        newHash = newHash + currentHash.substring(ampIndex);
-                    }
-                    window.location.hash = newHash;
-                } else if (currentHash.indexOf('#') != -1) {
-                    window.location.hash = currentHash + '&c=1';
-                } else {
-                    window.location.hash = '#c=1';
-                }
-            }
-
-            $('#maximizePanelContainer').show();
-            lastLeftPanelWidth = $('#leftPanel').width();
-            $('#leftPanel').hide();
-            $('.vsplitbar').hide();
-            $('#rightPanel').width($(window).width());
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-        }
-
-        function expand() {
-            var currentHash = self.location.hash;
-            var varIndex = currentHash.indexOf('&c=');
-            if (varIndex == -1) varIndex = currentHash.indexOf('#c=');
-            //If the collapse hash string var is present, remove it
-            if (varIndex != -1) {
-                var newHash = currentHash.substring(0, varIndex);
-
-                var ampIndex = currentHash.indexOf('&', varIndex + 1);
-                if (ampIndex != -1) {
-                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
-                }
-                self.location.hash = newHash;
-            }
-
-            $('#maximizePanelContainer').hide();
-            $('#leftPanel').width(lastLeftPanelWidth);
-            $('#leftPanel').show();
-            $('.vsplitbar').show();
-            $('#rightPanel').width($(window).width() - $('#leftPanel').width() - $('.vsplitbar').width());
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-        }
-
-        function initialize() {
-            var mainFrame = document.getElementById("mainFrame");
-            var pageName = HashString("p");
-            if(pageName.length > 0) mainFrame.contentWindow.location.href = pageName + ".html";
-            else {
-                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
-                mainFrame.contentWindow.location.href = (url ? url : "about:blank");
-            }
-        }
-        
-        function getFirstPageUrl(nodes) {
-            for (var i = 0; i < nodes.length; i++) {
-                var node = nodes[i];
-                if (node.url) return node.url;
-                else {
-                    var hasChildren = (node.children && node.children.length > 0);
-                    if (hasChildren) {
-                        var url = getFirstPageUrl(node.children);
-                        if (url) return url;
-                    }
-                }
-            }
-            return null;
-        }
-
-        function initializeLogo() {
-            if($axure.document.configuration.logoImagePath) {
-                $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
-                $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
-                $('#interfaceControlFrameMinimizeContainer').css('background-color', '#FFFFFF');
-            } else $('#interfaceControlFrameLogoImageContainer').hide();
-
-            if ($axure.document.configuration.logoImageCaption) {
-                $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
-                $('#interfaceControlFrameMinimizeContainer').css('background-color', '#FFFFFF');
-            } else $('#interfaceControlFrameLogoCaptionContainer').hide();
-
-            if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
-                $('#interfaceControlFrameLogoContainer').hide();
-            }
-        }
-
-        function mainFrame_onload() {
-            if($axure.page.pageName) document.title = $axure.page.pageName;
-        }
-
-        function HashString(query) {
-            var qstring = self.location.href.split("#");
-            if(qstring.length < 2) return "";
-
-            var prms = qstring[1].split("&");
-            var frmelements = new Array();
-            var currprmeter, querystr = "";
-
-            for(var i = 0; i < prms.length; i++) {
-                currprmeter = prms[i].split("=");
-                frmelements[i] = new Array();
-                frmelements[i][0] = currprmeter[0];
-                frmelements[i][1] = currprmeter[1];
-            }
-
-            for(j = 0; j < frmelements.length; j++) {
-                if(frmelements[j][0] == query) {
-                    querystr = frmelements[j][1];
-                    break;
-                }
-            }
-            return querystr;
-        }
-
-    --></script>
-
-    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
-    <script type="text/javascript" src="plugins/sitemap/sitemap.js"></script>
-    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
-    <script type="text/javascript" src="plugins/page_notes/page_notes.js"></script>
-
+    <title>框架</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/框架/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototype/axQuery.js"></script>
+    <script src="resources/scripts/prototype/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/prototype/annotation.js"></script>
+    <script src="resources/scripts/prototype/axQuery.std.js"></script>
+    <script src="resources/scripts/prototype/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/prototype/events.js"></script>
+    <script src="resources/scripts/prototype/action.js"></script>
+    <script src="resources/scripts/prototype/expr.js"></script>
+    <script src="resources/scripts/prototype/geometry.js"></script>
+    <script src="resources/scripts/prototype/flyout.js"></script>
+    <script src="resources/scripts/prototype/ie.js"></script>
+    <script src="resources/scripts/prototype/model.js"></script>
+    <script src="resources/scripts/prototype/repeater.js"></script>
+    <script src="resources/scripts/prototype/sto.js"></script>
+    <script src="resources/scripts/prototype/utils.temp.js"></script>
+    <script src="resources/scripts/prototype/variables.js"></script>
+    <script src="resources/scripts/prototype/drag.js"></script>
+    <script src="resources/scripts/prototype/move.js"></script>
+    <script src="resources/scripts/prototype/visibility.js"></script>
+    <script src="resources/scripts/prototype/style.js"></script>
+    <script src="resources/scripts/prototype/adaptive.js"></script>
+    <script src="resources/scripts/prototype/tree.js"></script>
+    <script src="resources/scripts/prototype/init.temp.js"></script>
+    <script src="files/框架/data.js"></script>
+    <script src="resources/scripts/prototype/legacy.js"></script>
+    <script src="resources/scripts/prototype/viewer.js"></script>
 </head>
-<body scroll="no">
-    <div id="outerContainer">
+<body>
 
-        <div id="leftPanel">
-            <div id="interfaceControlFrame">
-                <div id="interfaceControlFrameMinimizeContainer">
-                    <a title="最小化" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
-                    <div id="interfaceControlFrameCloseContainer">
-                        <a title="关闭" id="interfaceControlFrameCloseButton" onclick="closePlayer();">&nbsp;</a>
-                    </div>
-                </div>
-                <div id="interfaceControlFrameLogoContainer">
-                    <div id="interfaceControlFrameLogoImageContainer"></div>
-                    <div id="interfaceControlFrameLogoCaptionContainer"></div>
-                </div>
-                <div id="interfaceControlFrameHeaderContainer">
-                    <ul id="interfaceControlFrameHeader">
-                    </ul>
-                </div>
-                <div id="interfaceControlFrameContainer">
-                </div>
+<!-- Unnamed (形状) -->
+<div id="u0" class="ax_形状">
+    <img id="u0_img" class="img " src="images/框架/u0.png"/>
+    <!-- Unnamed () -->
+    <div id="u1" class="text"></div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u2" class="ax_形状">
+    <img id="u2_img" class="img " src="images/框架/u2.png"/>
+    <!-- Unnamed () -->
+    <div id="u3" class="text"></div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u4" class="ax_形状">
+    <img id="u4_img" class="img " src="images/框架/u4.png"/>
+    <!-- Unnamed () -->
+    <div id="u5" class="text"></div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u6" class="ax_h1">
+    <img id="u6_img" class="img " src="resources/images/transparent.gif"/>
+    <!-- Unnamed () -->
+    <div id="u7" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">OA管理系统</span></p>
+    </div>
+</div>
+
+<!-- Unnamed (内部框架) -->
+<iframe id="u8" basesrc="/mydesk" scrolling="auto" frameborder="0"></iframe>
+
+<!-- Unnamed (图片) -->
+<div id="u9" class="ax_图片">
+    <img id="u9_img" class="img " src="images/框架/u9.png"/>
+    <!-- Unnamed () -->
+    <div id="u10" class="text"></div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u11" class="ax_文本">
+    <img id="u11_img" class="img " src="resources/images/transparent.gif"/>
+    <!-- Unnamed () -->
+    <div id="u12" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">2013-1</span><span style="font-family:'Applied Font Regular', 'Applied Font';">2</span><span style="font-family:'Applied Font Regular', 'Applied Font';">-19 17:10:45</span><span style="font-family:'Applied Font Regular', 'Applied Font';"> 周二</span></p>
+    </div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u13" class="ax_形状">
+    <img id="u13_img" class="img " src="images/框架/u13.png"/>
+    <!-- Unnamed () -->
+    <div id="u14" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">退</span><span style="font-family:'Applied Font Regular', 'Applied Font';">出</span></p>
+    </div>
+</div>
+
+<!-- m2 (形状) -->
+<div id="u15" class="ax_形状" data-label="m2">
+    <img id="u15_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u16" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">通告管理</span></p>
+    </div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u17" class="ax_文本">
+    <img id="u17_img" class="img " src="resources/images/transparent.gif"/>
+    <!-- Unnamed () -->
+    <div id="u18" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">你好，</span><span style="font-family:'Applied Font Regular', 'Applied Font';">李四</span><span style="font-family:'Applied Font Regular', 'Applied Font';">&nbsp;</span><span style="font-family:'Applied Font Regular', 'Applied Font';">&nbsp;</span><span style="font-family:'Applied Font Regular', 'Applied Font';">研发部</span></p>
+    </div>
+</div>
+
+<!-- m3 (形状) -->
+<div id="u19" class="ax_形状" data-label="m3">
+    <img id="u19_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u20" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">文档管理</span></p>
+    </div>
+</div>
+
+<!-- m4 (形状) -->
+<div id="u21" class="ax_形状" data-label="m4">
+    <img id="u21_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u22" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">行政管理</span></p>
+    </div>
+</div>
+
+<!-- m5 (形状) -->
+<div id="u23" class="ax_形状" data-label="m5">
+    <img id="u23_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u24" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">人事管理</span></p>
+    </div>
+</div>
+
+<!-- m6 (形状) -->
+<div id="u25" class="ax_形状" data-label="m6">
+    <img id="u25_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u26" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">系统管理</span></p>
+    </div>
+</div>
+
+<!-- m1 (形状) -->
+<div id="u27" class="ax_形状" data-label="m1">
+    <img id="u27_img" class="img " src="images/框架/m2_u15.png"/>
+    <!-- Unnamed () -->
+    <div id="u28" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">我的</span><span style="font-family:'Applied Font Regular', 'Applied Font';">桌面</span></p>
+    </div>
+</div>
+
+<!-- 菜单 (动态面板) -->
+<div id="u29" class="ax_动态面板" data-label="菜单">
+    <div id="u29_state0" class="panel_state" data-label="我的桌面">
+    </div>
+    <div id="u29_state1" class="panel_state" data-label="通告管理">
+    </div>
+    <div id="u29_state2" class="panel_state" data-label="文档管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u30" class="ax_文本">
+            <img id="u30_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u31" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';"> 文档列表</span></p>
             </div>
         </div>
-        <div id="rightPanel">
-            <iframe id="mainFrame" width="100%" height="100%" src="" frameborder="0"></iframe>
+
+        <!-- Unnamed (形状) -->
+        <div id="u32" class="ax_文本">
+            <img id="u32_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u33" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">文档回收站</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="u29_state3" class="panel_state" data-label="行政管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u34" class="ax_文本">
+            <img id="u34_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u35" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">会议室管理</span></p>
+            </div>
         </div>
 
-    </div>
+        <!-- Unnamed (形状) -->
+        <div id="u36" class="ax_文本">
+            <img id="u36_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u37" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">用车管理</span></p>
+            </div>
+        </div>
 
-    <div id="maximizePanelContainer">
-        <iframe id="expandFrame" src="resources/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
-    </div>
+        <!-- Unnamed (形状) -->
+        <div id="u38" class="ax_文本">
+            <img id="u38_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u39" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">用章管理</span></p>
+            </div>
+        </div>
 
+        <!-- Unnamed (形状) -->
+        <div id="u40" class="ax_文本">
+            <img id="u40_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u41" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">图书借阅申请</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u42" class="ax_文本">
+            <img id="u42_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u43" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">名片印制流程</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="u29_state4" class="panel_state" data-label="人事管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u44" class="ax_文本">
+            <img id="u44_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u45" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">请假申请</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u46" class="ax_文本">
+            <img id="u46_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u47" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">出差申请</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u48" class="ax_文本">
+            <img id="u48_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u49" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">收入证明流程</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="u29_state5" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u50" class="ax_文本">
+            <img id="u50_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u51" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">组织结构管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u52" class="ax_文本">
+            <img id="u52_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u53" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">角色管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u54" class="ax_文本">
+            <img id="u54_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u55" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">用户管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u56" class="ax_文本">
+            <img id="u56_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u57" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">操作日志</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u58" class="ax_文本">
+            <img id="u58_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u59" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">上传文件设置</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u60" class="ax_文本">
+            <img id="u60_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u61" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">字典管理</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Unnamed (形状) -->
+<div id="u62" class="ax_文本">
+    <img id="u62_img" class="img " src="resources/images/transparent.gif"/>
+    <!-- Unnamed () -->
+    <div id="u63" class="text">
+        <p><span style="font-family:'Applied Font Regular', 'Applied Font';">修改密码</span></p>
+    </div>
+</div>
+
+<!-- 修改密码 (动态面板) -->
+<div id="u64" class="ax_动态面板" data-label="修改密码">
+    <div id="u64_state0" class="panel_state" data-label="状态1">
+
+        <!-- Unnamed (形状) -->
+        <div id="u65" class="ax_形状">
+            <img id="u65_img" class="img " src="images/框架/u65.png"/>
+            <!-- Unnamed () -->
+            <div id="u66" class="text"></div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u67" class="ax_文本">
+            <img id="u67_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u68" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">新密码：</span></p>
+            </div>
+        </div>
+
+        <!-- textfield - password (文本框(单行)) -->
+        <div id="u69" class="ax_文本框_单行_">
+            <input id="u69_input" type="password" value="" class="text_sketch" data-label="textfield - password"/>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u70" class="ax_文本">
+            <img id="u70_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u71" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">确认新密码：</span></p>
+            </div>
+        </div>
+
+        <!-- textfield - verify password (文本框(单行)) -->
+        <div id="u72" class="ax_文本框_单行_">
+            <input id="u72_input" type="password" value="" class="text_sketch" data-label="textfield - verify password"/>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u73" class="ax_图片">
+            <img id="u73_img" class="img " src="images/框架/u73.png"/>
+            <!-- Unnamed () -->
+            <div id="u74" class="text"></div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u75" class="ax_文本">
+            <img id="u75_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u76" class="text">
+                <p><span style="font-family:'Applied Font Bold', 'Applied Font';">修改</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u77" class="ax_图片">
+            <img id="u77_img" class="img " src="images/框架/u77.png"/>
+            <!-- Unnamed () -->
+            <div id="u78" class="text"></div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u79" class="ax_文本">
+            <img id="u79_img" class="img " src="resources/images/transparent.gif"/>
+            <!-- Unnamed () -->
+            <div id="u80" class="text">
+                <p><span style="font-family:'Applied Font Regular', 'Applied Font';">旧密码:</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (文本框(单行)) -->
+        <div id="u81" class="ax_文本框_单行_">
+            <input id="u81_input" type="password" value="" class="text_sketch"/>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 ﻿$axure.loadCurrentPage({
-  "url":"login.html",
+  "url":"登入.html",
   "generationDate":new Date(1386565821934.41),
   "isCanvasEnabled":false,
   "variables":["OnLoadVariable",
@@ -322,7 +322,7 @@
                       "description":"在 当前窗口 打开 框架",
                       "target":{
                         "targetType":"page",
-                        "url":"框架.html",
+                        "url":"index.html",
                         "includeVariables":true},
                       "linkType":"current"}]}]}},
           "tabbable":true,

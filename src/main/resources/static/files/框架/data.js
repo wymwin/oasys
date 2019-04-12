@@ -466,7 +466,7 @@
                           "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                           "target":{
                             "targetType":"page",
-                            "url":"通告列表_1.html",
+                            "url":"/tongao",
                             "includeVariables":true}}]}]}]},
             "onMouseOver":{
               "description":"OnMouseOver",
@@ -1071,7 +1071,7 @@
                           "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                           "target":{
                             "targetType":"page",
-                            "url":"我的桌面.html",
+                            "url":"/mydesk",
                             "includeVariables":true}}]}]}]}},
           "tabbable":true,
           "images":{
@@ -1157,7 +1157,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"文档列表.html",
+                                    "url":"/notice",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1211,7 +1211,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"文档回收站.html",
+                                    "url":"/noticegc",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1263,13 +1263,13 @@
                           "isNewIfGroup":false,
                           "actions":[{
                               "action":"linkFrame",
-                              "description":"打开 meeting 进入 (内部框架)",
+                              "description":"打开 会议室管理 进入 (内部框架)",
                               "linkType":"frame",
                               "framesToTargets":[{
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"meeting.html",
+                                    "url":"/meeting",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1317,13 +1317,13 @@
                           "isNewIfGroup":false,
                           "actions":[{
                               "action":"linkFrame",
-                              "description":"打开 usingcar 进入 (内部框架)",
+                              "description":"打开 用车管理 进入 (内部框架)",
                               "linkType":"frame",
                               "framesToTargets":[{
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"usingcar.html",
+                                    "url":"/usingcar",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{

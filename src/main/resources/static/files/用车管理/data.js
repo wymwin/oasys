@@ -1,5 +1,5 @@
 ﻿$axure.loadCurrentPage({
-  "url":"usingcar.html",
+  "url":"用车管理.html",
   "generationDate":new Date(1386565837748.32),
   "isCanvasEnabled":false,
   "variables":["OnLoadVariable",
@@ -181,7 +181,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/meeting/1_u7.png"}},
+                    "normal~":"images/会议室管理/1_u7.png"}},
 {
                   "id":"4c10c707bc644b60bb5a55249dd32e0d",
                   "label":"1",
@@ -201,7 +201,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/usingcar/1_u8_line.png"}},
+                    "line~":"images/用车管理/1_u8_line.png"}},
 {
                   "id":"c208bc909db2471dbd222e694bc57064",
                   "label":"1",
@@ -271,7 +271,7 @@
                   "annotation":{
                     "提示":"只有系统管理员或者负责人才可见"},
                   "images":{
-                    "normal~":"images/meeting/1_u7.png"}},
+                    "normal~":"images/会议室管理/1_u7.png"}},
 {
                   "id":"24546d72958d4ec199481a78359c4cee",
                   "label":"",
@@ -678,7 +678,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/usingcar/u29.png"}},
+                    "normal~":"images/用车管理/u29.png"}},
 {
                   "id":"3d0a726f41344f8eabf1f337f36db885",
                   "label":"",
@@ -761,7 +761,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/usingcar/u31.png"}},
+                    "normal~":"images/用车管理/u31.png"}},
 {
                   "id":"bde14d2d30cb4676b7f861c7d94efe0a",
                   "label":"",
@@ -3941,7 +3941,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/usingcar/u150.png"}}]},
+                    "normal~":"images/用车管理/u150.png"}}]},
 {
               "id":"23e5691447c544fda8fba8d369d4a2a6",
               "label":"3",
@@ -4013,7 +4013,7 @@
                                       "compress":false}}}]}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/meeting/1_u7.png"}},
+                    "normal~":"images/会议室管理/1_u7.png"}},
 {
                   "id":"c1dc1469dbf64187a6f1b84b8d16b584",
                   "label":"",
@@ -4070,7 +4070,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/meeting/1_u195_line.png"}},
+                    "line~":"images/会议室管理/1_u195_line.png"}},
 {
                   "id":"c8a5a1403cca45f2b878b53bd741db27",
                   "label":"1",
@@ -4090,7 +4090,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/meeting/1_u410_line.png"}},
+                    "line~":"images/会议室管理/1_u410_line.png"}},
 {
                   "id":"ae895e1c11744b109e173f21bd04afc3",
                   "label":"",
@@ -4205,7 +4205,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u163.png"}},
+                        "normal~":"images/用车管理/u163.png"}},
 {
                       "id":"1abd8989735a4bcbb7fe8b3a34ae911f",
                       "label":"",
@@ -4258,7 +4258,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u183.png"}},
+                        "normal~":"images/用车管理/u183.png"}},
 {
                       "id":"11e75818caa24499bd28cd52e7e5ba07",
                       "label":"",
@@ -4305,7 +4305,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u193.png"}},
+                        "normal~":"images/用车管理/u193.png"}},
 {
                       "id":"42105f07ca8f46e9a295c224f6ef4403",
                       "label":"",
@@ -4362,7 +4362,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u165.png"}},
+                        "normal~":"images/用车管理/u165.png"}},
 {
                       "id":"7afd0a9941894156bae4424eef0a6927",
                       "label":"",
@@ -4415,7 +4415,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u185.png"}},
+                        "normal~":"images/用车管理/u185.png"}},
 {
                       "id":"382d1784c61340d692765ed4650319bd",
                       "label":"",
@@ -4462,7 +4462,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u195.png"}},
+                        "normal~":"images/用车管理/u195.png"}},
 {
                       "id":"aafc02cebd804ead9e00693c1fe1f336",
                       "label":"",
@@ -4509,7 +4509,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u173.png"}},
+                        "normal~":"images/用车管理/u173.png"}},
 {
                       "id":"c777c9cb104f4d5a8914a84c69576304",
                       "label":"",
@@ -4556,7 +4556,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u175.png"}},
+                        "normal~":"images/用车管理/u175.png"}},
 {
                       "id":"f143298937e24f7ebeb5a7e3978f4346",
                       "label":"",
@@ -4607,7 +4607,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u161.png"}},
+                        "normal~":"images/用车管理/u161.png"}},
 {
                       "id":"5baa343065f44251a68e13ea48e4c2e0",
                       "label":"",
@@ -4654,7 +4654,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u171.png"}},
+                        "normal~":"images/用车管理/u171.png"}},
 {
                       "id":"e609b42e464343f6bbb7ac3d0b2aa170",
                       "label":"",
@@ -4707,7 +4707,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u181.png"}},
+                        "normal~":"images/用车管理/u181.png"}},
 {
                       "id":"6586f1b0e6a34ac685176518892dedab",
                       "label":"",
@@ -4754,7 +4754,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u191.png"}},
+                        "normal~":"images/用车管理/u191.png"}},
 {
                       "id":"8c9aff516aea42429852d2249ed2f8b3",
                       "label":"",
@@ -4811,7 +4811,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u169.png"}},
+                        "normal~":"images/用车管理/u169.png"}},
 {
                       "id":"c17b58115798488a9c3eacc62d4aa145",
                       "label":"",
@@ -4858,7 +4858,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u179.png"}},
+                        "normal~":"images/用车管理/u179.png"}},
 {
                       "id":"b9ede813a72a4e889596c7c12fb0a1f4",
                       "label":"",
@@ -4911,7 +4911,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u189.png"}},
+                        "normal~":"images/用车管理/u189.png"}},
 {
                       "id":"1a1496ee61d64054a19cadcec3583f89",
                       "label":"",
@@ -4958,7 +4958,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u199.png"}},
+                        "normal~":"images/用车管理/u199.png"}},
 {
                       "id":"230bd32c1e4e4b65837f42d49d34f7f5",
                       "label":"",
@@ -5015,7 +5015,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u167.png"}},
+                        "normal~":"images/用车管理/u167.png"}},
 {
                       "id":"e6b49c0a47b4402e8096b084252e35a5",
                       "label":"",
@@ -5062,7 +5062,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u177.png"}},
+                        "normal~":"images/用车管理/u177.png"}},
 {
                       "id":"fab2143bdd164dc4ba7c13477c4db418",
                       "label":"",
@@ -5115,7 +5115,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u187.png"}},
+                        "normal~":"images/用车管理/u187.png"}},
 {
                       "id":"d8b7d6c2762d41b5b59d052610edb387",
                       "label":"",
@@ -5162,7 +5162,7 @@
                           "adaptiveStyles":{
 }}],
                       "images":{
-                        "normal~":"images/usingcar/u197.png"}}]},
+                        "normal~":"images/用车管理/u197.png"}}]},
 {
                   "id":"9d4d783d7bc54eec8165999898e399c3",
                   "label":"",
@@ -5327,7 +5327,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u206.png"}},
+                            "normal~":"images/用车管理/u206.png"}},
 {
                           "id":"e32f3077e7af4ee8b48927cf5b04aef0",
                           "label":"",
@@ -5372,7 +5372,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u208.png"}},
+                            "normal~":"images/用车管理/u208.png"}},
 {
                           "id":"1751565798724302973c0ee3f1b5341c",
                           "label":"",
@@ -5423,7 +5423,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u210.png"}},
+                            "normal~":"images/用车管理/u210.png"}},
 {
                           "id":"dd14959dcf294f49ba8cce589952b938",
                           "label":"label - dialog title",
@@ -5498,7 +5498,7 @@
                           "images":{
                             "start~":"resources/images/transparent.gif",
                             "end~":"resources/images/transparent.gif",
-                            "line~":"images/usingcar/u214_line.png"}},
+                            "line~":"images/用车管理/u214_line.png"}},
 {
                           "id":"ce3fa8aa30b34c8181f9e834866c15e6",
                           "label":"",
@@ -6055,7 +6055,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u206.png"}},
+                            "normal~":"images/用车管理/u206.png"}},
 {
                           "id":"d0ee91cf1c554b6fa2c2055f306c955c",
                           "label":"",
@@ -6100,7 +6100,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u208.png"}},
+                            "normal~":"images/用车管理/u208.png"}},
 {
                           "id":"0b962fc78a4e41fdae30e4f367fbcf97",
                           "label":"",
@@ -6151,7 +6151,7 @@
                               "adaptiveStyles":{
 }}],
                           "images":{
-                            "normal~":"images/usingcar/u210.png"}},
+                            "normal~":"images/用车管理/u210.png"}},
 {
                           "id":"1a7d20d068cb4ad1ae2facd14c96ac3c",
                           "label":"label - dialog title",
@@ -6226,7 +6226,7 @@
                           "images":{
                             "start~":"resources/images/transparent.gif",
                             "end~":"resources/images/transparent.gif",
-                            "line~":"images/usingcar/u214_line.png"}},
+                            "line~":"images/用车管理/u214_line.png"}},
 {
                           "id":"759213330da54d21ac9e43c47f21029f",
                           "label":"",
@@ -6874,7 +6874,7 @@
                                       "compress":false}}}]}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/meeting/1_u7.png"}},
+                    "normal~":"images/会议室管理/1_u7.png"}},
 {
                   "id":"55412f1611aa4347b0f530ebd5266993",
                   "label":"",

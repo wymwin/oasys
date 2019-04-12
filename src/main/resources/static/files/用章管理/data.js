@@ -354,7 +354,7 @@
                               "showType":"none"}}}]}]}]}},
           "tabbable":true,
           "images":{
-            "normal~":"images/usingcar/u29.png"}},
+            "normal~":"images/用车管理/u29.png"}},
 {
           "id":"f045f3425a1c4b82adc8556697dea654",
           "label":"",
@@ -435,7 +435,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/usingcar/u31.png"}},
+            "normal~":"images/用车管理/u31.png"}},
 {
           "id":"4f03b930ae6e4c08907f2ae07cbea460",
           "label":"",
@@ -513,7 +513,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/usingcar/u150.png"}},
+            "normal~":"images/用车管理/u150.png"}},
 {
           "id":"d04ca576524b4e1d806b703ddd8c8fb2",
           "label":"",
@@ -591,7 +591,7 @@
               "adaptiveStyles":{
 }}],
           "images":{
-            "normal~":"images/usingcar/u150.png"}},
+            "normal~":"images/用车管理/u150.png"}},
 {
           "id":"5f37aa9e9bdf48a6b8ffb4427c2f2204",
           "label":"textfield - date",
@@ -5237,7 +5237,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/meeting/u175.png"}},
+                    "normal~":"images/会议室管理/u175.png"}},
 {
                   "id":"d280208aaa0444bfa0bc5c5d1e7c6fc3",
                   "label":"",
@@ -5276,7 +5276,7 @@
                       "adaptiveStyles":{
 }}],
                   "images":{
-                    "normal~":"images/meeting/u177.png"}},
+                    "normal~":"images/会议室管理/u177.png"}},
 {
                   "id":"4266588433504d16af39c7883442bb38",
                   "label":"",
@@ -5335,7 +5335,7 @@
                   "images":{
                     "start~":"resources/images/transparent.gif",
                     "end~":"resources/images/transparent.gif",
-                    "line~":"images/meeting/u181_line.png"}},
+                    "line~":"images/会议室管理/u181_line.png"}},
 {
                   "id":"7b908b31f1384fbb90d399ad0f7d4e99",
                   "label":"",
@@ -5410,7 +5410,7 @@
                               "linkType":"current"}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/meeting/u182.png"}},
+                    "normal~":"images/会议室管理/u182.png"}},
 {
                   "id":"9abbbc8c0c864a399494827bfec8d3ad",
                   "label":"",
@@ -5477,7 +5477,7 @@
                                       "showType":"none"}}}]}]}]}},
                   "tabbable":true,
                   "images":{
-                    "normal~":"images/meeting/u182.png"}},
+                    "normal~":"images/会议室管理/u182.png"}},
 {
                   "id":"2b4146ead4d24c2aa1362b9ea6b5471d",
                   "label":"",
