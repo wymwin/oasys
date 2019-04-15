@@ -620,7 +620,7 @@
                           "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                           "target":{
                             "targetType":"page",
-                            "url":"文档列表.html",
+                            "url":"/notice",
                             "includeVariables":true}}]}]}]},
             "onMouseOver":{
               "description":"OnMouseOver",
@@ -1377,7 +1377,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"用章管理.html",
+                                    "url":"/usingzhang",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1431,7 +1431,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"图书借阅申请.html",
+                                    "url":"/booklook",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1485,7 +1485,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"名片印制流程.html",
+                                    "url":"/usercard",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1543,7 +1543,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"请假申请.html",
+                                    "url":"/holiday",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1597,7 +1597,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"出差申请.html",
+                                    "url":"/chucai",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{
@@ -1651,7 +1651,7 @@
                                   "framePath":["5fc9719f13c741cf9b3ce8e25c1cb00c"],
                                   "target":{
                                     "targetType":"page",
-                                    "url":"收入证明流程.html",
+                                    "url":"/srzm",
                                     "includeVariables":true}}]}]}]}},
                   "tabbable":true,
                   "images":{

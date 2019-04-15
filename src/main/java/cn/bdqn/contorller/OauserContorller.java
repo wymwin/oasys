@@ -50,4 +50,43 @@ public class OauserContorller {
         ModelAndView mv = new ModelAndView("noticegc");
         return mv;
     }
+
+    //用章管理
+    @RequestMapping("/usingzhang")
+    public ModelAndView Tusingzhang(){
+        ModelAndView mv = new ModelAndView("usingzhang");
+        return mv;
+    }
+
+    //图书借阅
+    @RequestMapping("/booklook")
+    public ModelAndView Tbooklook(){
+        ModelAndView mv = new ModelAndView("booklook");
+        return mv;
+    }
+
+    //用章管理
+    @RequestMapping("/usercard")
+    public ModelAndView Tusercard(){
+        ModelAndView mv = new ModelAndView("usercard");
+        return mv;
+    }
+    //用章管理
+    @RequestMapping("/srzm")
+    public ModelAndView Tsrzm(){
+        ModelAndView mv = new ModelAndView("srzm");
+        return mv;
+    }
+    //请假申请
+    @RequestMapping("/holiday")
+    public ModelAndView Tholiday(){
+        ModelAndView mv = new ModelAndView("holiday");
+        return mv;
+    }
+    //出差申请
+    @RequestMapping("/chucai")
+    public ModelAndView Tchucai(){
+        ModelAndView mv = new ModelAndView("chucai");
+        return mv;
+    }
 }
